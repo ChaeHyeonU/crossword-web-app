@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "turbo": "^2.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "with-react-native-web",
+  "packageManager": "npm@10.9.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@next-auth/prisma-adapter": "^1.0.7",
+    "next-auth": "^4.24.11",
+    "react-native-web": "^0.20.0",
+    "expo-auth-session": "~5.4.0",
+    "expo-web-browser": "~12.8.2"
+  }
+}
