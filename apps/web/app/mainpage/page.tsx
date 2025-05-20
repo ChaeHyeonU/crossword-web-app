@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { MainPage } from '@crossword-core/components/MainPage';
+import { MainPage } from './MainPage';
 
 const puzzles = [
   { id: 1, title: '세계 수도 퍼즐', desc: '수도 이름을 맞혀보세요!', level: '초급' },
@@ -14,5 +14,7 @@ export default function MainPageWrapper() {
   const handlePuzzleSelect = (id: number) => {
     router.push(`/game/${id}`);
   };
-  return <MainPage puzzles={puzzles} onPuzzleSelect={handlePuzzleSelect} userName={undefined} />;
+  return (
+    <MainPage puzzles={puzzles} onPuzzleSelect={handlePuzzleSelect} userName={undefined} />
+  );
 } 

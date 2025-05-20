@@ -74,3 +74,19 @@ import { Button } from "@repo/ui";
 ```
 
 ---
+
+## 📦 패키지 구조 및 역할 (2024 리팩토링 반영)
+
+- **apps/web**: Next.js 기반 웹앱. 페이지/라우팅/웹 전용 UI 관리
+- **apps/native**: Expo 기반 리액트 네이티브 앱. 모바일 전용 화면/라우팅 관리
+- **packages/ui**: 공통 UI 컴포넌트(버튼 등). 앞으로 `src/components/` 하위에 확장 예정
+- **packages/crossword-core**: 크로스워드 비즈니스 로직, 순수 UI 컴포넌트만 포함 (페이지 컴포넌트는 각 앱으로 이동)
+- **packages/typescript-config**: 타입스크립트 공통 설정
+
+### 리팩토링 주요 내용
+- core 패키지에서 페이지 컴포넌트 분리, 각 앱으로 이동
+- UI 패키지 구조 개선 (components 폴더 신설)
+- 패키지별 react-native 버전 통일(0.76.9)
+- TypeScript strict 옵션 강화 (noUnusedLocals/Parameters true)
+
+---

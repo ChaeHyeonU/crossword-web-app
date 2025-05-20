@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { LoginPage } from '@crossword-core/components/LoginPage';
+import { LoginPage } from './LoginPage';
 import GoogleProvider from "next-auth/providers/google";
 
 export default function Login() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Platform } from "react-native";
 
 interface CrosswordCellProps {
   cellSize: number;
@@ -51,7 +51,11 @@ export const CrosswordCell: React.FC<CrosswordCellProps> = ({
             autoCapitalize="none"
             autoCorrect={false}
             selectTextOnFocus
-            keyboardType="default"
+            keyboardType={Platform.OS === 'web' ? 'default' : 'visible-password'}
+            {...(Platform.OS === 'web' ? {
+              spellCheck: false,
+              autoComplete: 'off'
+            } : {})}
           />
         ) : null}
       </View>
